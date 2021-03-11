@@ -28,7 +28,7 @@
   margin-left: auto;
 }
 .bg-green-gradient{
-  background:-webkit-gradient(linear, left bottom, left top, color-stop(0, #00d3ef), color-stop(1, #00ca6d)) !important;
+  background:-webkit-gradient(linear, left bottom, left top, color-stop(0, #3c8dbc), color-stop(1, #3c8dbc)) !important;
   
 }
 
