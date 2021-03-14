@@ -31,5 +31,8 @@
   background:-webkit-gradient(linear, left bottom, left top, color-stop(0, #3c8dbc), color-stop(1, #3c8dbc)) !important;
   
 }
+.bg-yellow-gradient{
+  background:-webkit-gradient(linear, left bottom, left top, color-stop(0, #3c8dbc), color-stop(1, #3c8dbc)) !important;
+}
 
 
