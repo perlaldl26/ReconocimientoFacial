@@ -755,6 +755,18 @@ class SurveillanceSystem(object):
 
    def send_email_notification_alert(self,alert):
       """ Code produced in this tutorial - http://naelshiab.com/tutorial-send-email-python/"""
+      print ''
+      print ''
+      print ''
+      print ''
+      print ''
+      print ''
+      print ''
+      print ''
+      print '>>>>>>>>>>>>>>>>>>>>Activar alertaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+
+      from subprocess import call
+      exit_code = call("python3.5 PushNotification.py", shell=True)
 
       fromaddr = "Alerta.seguridad.itson@gmail.com"
       toaddr = alert.emailAddress
