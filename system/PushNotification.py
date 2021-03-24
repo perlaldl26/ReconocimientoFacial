@@ -4,6 +4,11 @@ from firebase_admin import credentials, messaging
 import base64
 from PIL import Image
 
+from datetime import datetime
+
+
+now = datetime.now()
+current_time = now.strftime("%B %d, %Y : %H:%M:%S")
 
 from firebase import firebase
 
@@ -42,7 +47,7 @@ def sendPush(title, msg, registration_token, dataObject=None):
             title=title,
             body=msg
         ),
-        data={"id" : str(n), "info" : "desconocido"},
+        data={"id" : str(n), "info" : current_time},
         tokens=registration_token,
     )
 
