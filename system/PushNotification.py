@@ -47,7 +47,7 @@ def sendPush(title, msg, registration_token, dataObject=None):
             title=title,
             body=msg
         ),
-        data={"id" : str(n), "info" : current_time},
+        data={"id" : str(n), "fecha" : current_time, "info" : "ALERTA, se ha detectado un intruso"},
         tokens=registration_token,
     )
 
