@@ -20,7 +20,7 @@
 # developed by Brandon Amos
 # Copyright 2015-2016 Carnegie Mellon University
 
-
+from PIL import Image
 import time
 import argparse
 import cv2
@@ -755,15 +755,10 @@ class SurveillanceSystem(object):
 
    def send_email_notification_alert(self,alert):
       """ Code produced in this tutorial - http://naelshiab.com/tutorial-send-email-python/"""
-      print ''
-      print ''
-      print ''
-      print ''
-      print ''
-      print ''
-      print ''
-      print ''
-      print '>>>>>>>>>>>>>>>>>>>>Activar alertaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+     
+
+      im = Image.open("notification/image.png")
+      im.save("notification/image.png", optimize=True,quality=25)
 
       from subprocess import call
       exit_code = call("python3.5 PushNotification.py", shell=True)

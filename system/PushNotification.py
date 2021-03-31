@@ -2,12 +2,16 @@
 import firebase_admin
 from firebase_admin import credentials, messaging
 import base64
-from PIL import Image
+
 
 from datetime import datetime
+from pytz import timezone
 
 
-now = datetime.now()
+
+mst = timezone('MST')
+now = datetime.now(mst)
+
 current_time = now.strftime("%B %d, %Y : %H:%M:%S")
 
 from firebase import firebase
@@ -23,20 +27,17 @@ print(tokens)
 cred = credentials.Certificate("quickstart.json")
 
 #cred = credentials.Certificate("/home/samuel/Descargas/nuevo/ReconocimientoFacial/system/quickstart.json")
-im = Image.open("notification/image.png")
-im.save("notification/image.png", optimize=True,quality=25)
+
 
 with open("notification/image.png", "rb") as image_file:
     encoded_string = base64.b64encode(image_file.read())
 
-n = 1
+n = 0
 
 result = firebase.put('/detecciones/'+str(n), "image", str(encoded_string))
 
-n += 1
 
-if n == 11:
-    n=0
+
 
 firebase_admin.initialize_app(cred)
 
@@ -64,3 +65,7 @@ def sendPush(title, msg, registration_token, dataObject=None):
 #tokens = ["eLiqu0oBQca7s9Xd2KViq8:APA91bFCj7caOEhSiim5wO3DBoGMKlPDIZlgnOjKfpZiU3thsXUOqwGUSuhY_ihP8u9_uJAFiv6xfVuf4dHgNnzWyfB7a1IXoHH12ji1-n5tQskf5XNLc590b0sGP5zPZt6RNC5H0tvq"]
 
 sendPush("Alerta de intruso", "Se ha detectado un desconocido", tokens)
+n += 1
+
+if n == 11:
+    n=0
