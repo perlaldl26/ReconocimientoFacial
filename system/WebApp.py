@@ -385,5 +385,5 @@ def disconnect():
 
 if __name__ == '__main__':
      # Starts server on default port 5000 and makes socket connection available to other hosts (host = '0.0.0.0')
-     socketio.run(app, host='127.0.0.1', debug=False, use_reloader=False) 
+     socketio.run(app, host='0.0.0.0', debug=False, use_reloader=False) 
     
